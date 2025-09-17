@@ -3,7 +3,13 @@ plugins {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'       // gives webClient
+    implementation 'org.springframework.boot:spring-boot-starter-validation'    // gives data validation
+    implementation 'io.github.resilience4j:resilience4j-spring-boot3:2.2.0'     // gives Retry, RetryConfig
+    implementation 'io.github.resilience4j:resilience4j-reactor:2.2.0'          // gives RetryOperator for WebFlux
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
 }
 
 springBoot {
